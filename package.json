@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,10 +12,22 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "next": "^16.0.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
-  }
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trevor-Welch/next-video-roulette.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Trevor-Welch/next-video-roulette/issues"
+  },
+  "homepage": "https://github.com/Trevor-Welch/next-video-roulette#readme"
 }
