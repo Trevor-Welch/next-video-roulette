@@ -1,38 +1,23 @@
-// pages/index.tsx
+// pages/v/index.tsx
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useMode } from "../context/ModeContext";
 
-const HomePage: React.FC = () => {
+const RandomVideoRedirect: React.FC = () => {
   const router = useRouter();
-  const { setMode, filteredVideos } = useMode(); // access context
-  const allVideos = filteredVideos.all; // always use the full list
+  const { mode, filteredVideos } = useMode();
 
-  const handleRandomVideo = () => {
-    if (allVideos.length === 0) return;
+  useEffect(() => {
+    const pool = filteredVideos[mode] || [];
+    if (pool.length === 0) return;
 
-    // Force mode to "all" before navigating
-    setMode("all");
+    const randomIndex = Math.floor(Math.random() * pool.length);
+    const videoIndex = pool[randomIndex].index;
 
-    const randomIndex = Math.floor(Math.random() * allVideos.length);
-    router.push(`/v/${allVideos[randomIndex].index + 1}`); // +1 because /v/[number] is 1-based
-  };
+    router.replace(`/${videoIndex + 1}`);
+  }, [mode, router, filteredVideos]);
 
-  return (
-    <div style={{ textAlign: "center", marginTop: "100px" }}>
-      <h1>Welcome to Video Roulette</h1>
-      <button
-        onClick={handleRandomVideo}
-        style={{
-          padding: "10px 20px",
-          fontSize: "18px",
-          marginTop: "20px",
-          cursor: "pointer",
-        }}
-      >
-        Watch Random Video
-      </button>
-    </div>
-  );
+  return <p>Redirecting to a random video...</p>;
 };
 
-export default HomePage;
+export default RandomVideoRedirect;

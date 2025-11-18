@@ -1,0 +1,26 @@
+.paginationContainer {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px 0px;
+}
+
+
+.toggleButton {
+  background-color: transparent;
+  color: #555;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+.toggleButton:hover {
+    color: #888888;
+}
