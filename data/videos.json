@@ -1,5 +1,395 @@
 [
-  "NtE4l2h_nBs",
-  "cwCGecvGvNo",
-  "yknMJOgy2pA"
+    {
+        "title": "The Academic - Bear Claws (Live Looper Version)",
+        "videoId": "lO9d-AJai8Q",
+        "tags": [
+            "music",
+            "under 10 minutes"
+        ]
+    },
+    {
+        "title": "The Dictator's Speech",
+        "videoId": "k0CzXi9e66M",
+        "tags": [
+            "video",
+            "movie",
+            "under 5 minutes",
+            "serious"
+        ]
+    },
+    {
+        "title": "if math rock was folk",
+        "videoId": "lr9GivkqRG4",
+        "tags": [
+            "music",
+            "under 1 minute"
+        ]
+    },
+    {
+        "title": "Midnight Generation - Don't Wait Up",
+        "videoId": "9fER96Zbfog",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Exploring the Abandoned Six Flags Amusement Park",
+        "videoId": "6bVa6jn4rpE",
+        "tags": [
+            "video",
+            "under 1 minute",
+            "meme"
+        ]
+    },
+    {
+        "title": "What Is Love?",
+        "videoId": "6zlViU5PBPY",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "The Balls Are Inert",
+        "videoId": "6cS18yG8DJI",
+        "tags": [
+            "video",
+            "meme",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Evolution Of Dance",
+        "videoId": "dMH0bHeiRNg",
+        "tags": [
+            "video",
+            "under 10 minutes"
+        ]
+    },
+    {
+        "title": "Mr.Rogers - Garden of Your Mind",
+        "videoId": "OFzXaFbxDcM",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Keyboard Cat",
+        "videoId": "J---aiyznGQ",
+        "tags": [
+            "video",
+            "meme",
+            "under 1 minute"
+        ]
+    },
+    {
+        "title": "Breakdancer Kicks Kid",
+        "videoId": "O_1zwWtTD1Q",
+        "tags": [
+            "video",
+            "under 1 minute"
+        ]
+    },
+    {
+        "title": "You Ever Had A Dream Like This?",
+        "videoId": "G7RgN9ijwE4",
+        "tags": [
+            "video",
+            "meme",
+            "under 1 minute"
+        ]
+    },
+    {
+        "title": "Guy On Diving Board",
+        "videoId": "iM4vMFd7wv4",
+        "tags": [
+            "video",
+            "meme",
+            "under 1 minute"
+        ]
+    },
+    {
+        "title": "Crush On Obama",
+        "videoId": "wKsoXHYICqU",
+        "tags": [
+            "video",
+            "meme",
+            "under 1 minute"
+        ]
+    },
+    {
+        "title": "Boxer Punches Self",
+        "videoId": "QH2-TGUlwu4",
+        "tags": [
+            "video",
+            "meme",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Slow Song - The Dragonettes",
+        "videoId": "GuhUpKb6DMg",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Portland - Deezy Daisy",
+        "videoId": "qDnynbBn3w0",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Magdalena Bay - Top Dog",
+        "videoId": "ekxNdBZizNQ",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Magdalena Bay - Secrets",
+        "videoId": "TlhIk7iPU9o",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "The 1975 - Happiness",
+        "videoId": "rR1lgEMMJwo",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "The 1975 - The 1975 (NOACF)",
+        "videoId": "4fwEG8XK1uU",
+        "tags": [
+            "video",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "The 1975 - Bagsy Not In Net",
+        "videoId": "AUOXfzo3vxU",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "The 1975 - Yeah I Know",
+        "videoId": "dTK9N7n8Wcg",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "The 1975 - If You're Too Shy (Let Me Know)",
+        "videoId": "2c0i0VZq1bE",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Doja Cat - Kiss Me More",
+        "videoId": "8dM4ic6K2cE",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Doja Cat - Moo!",
+        "videoId": "mXnJqYwebF8",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Bleachers - Rollercoaster",
+        "videoId": "ldk2pLyVZ4c",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Wake Me Up When September Ends Shoegaze",
+        "videoId": "vC099ENiDRM",
+        "tags": [
+            "music",
+            "under 10 minutes"
+        ]
+    },
+    {
+        "title": "Drive Like I Do - Robbers",
+        "videoId": "JS9ZJ--01aw",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Pale Waves - Television Romance",
+        "videoId": "ot1j5M5PTC4",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Chromeo - Personal Effects",
+        "videoId": "tIGIWKfbUiw",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Yeule - Pixel Affection",
+        "videoId": "Arfse3z5YzQ",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Bleachers - Me Before You",
+        "videoId": "PU8mZhkWO_o",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Grimes - We Appreciate Power",
+        "videoId": "gYG_4vJ4qNA",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Ennaria - Monstarr",
+        "videoId": "cNB4ucAvJ8g",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "A. G. Cook - Show Me What",
+        "videoId": "pWEosXQGG2w",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Hot Mulligan - No Shoes In The Coffee Shop",
+        "videoId": "Em8PAsSuLqw",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Valley - Champagne",
+        "videoId": "yjmCxoWYjsw",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Modernlove. - Liquorice",
+        "videoId": "TqBMri47q2g",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Mila For Fun - Baby You Can Have It",
+        "videoId": "ontKpJ5BTgI",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Fake Shark - Superstitious Thing",
+        "videoId": "NjVZEu8_1D0",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Skuzland - Tell Me You Love Me",
+        "videoId": "Qr6KyiJaLpQ",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Joywave - Buy America",
+        "videoId": "wSOc_oJv4_E",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "The Aces - Always Get This Way",
+        "videoId": "ZsCfVcBFlt4",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Rich Aucoin - Reset",
+        "videoId": "aghXr7Uxb4M",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Mom Jeans - Girl Scout Cookies",
+        "videoId": "_fM79Aoms9I",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Mom Jeans - Death Cup",
+        "videoId": "BJwZXbHA_cE",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    },
+    {
+        "title": "Hot Chip - Huarache Lights",
+        "videoId": "9S0ONyRctyE",
+        "tags": [
+            "music",
+            "under 5 minutes"
+        ]
+    }
 ]

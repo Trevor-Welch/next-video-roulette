@@ -1,14 +1,20 @@
+// pages/index.tsx
 import { useRouter } from "next/router";
-import videosData from "../data/videos.json";
-
-const videos: string[] = videosData;
+import { useMode } from "../context/ModeContext";
 
 const HomePage: React.FC = () => {
   const router = useRouter();
+  const { setMode, filteredVideos } = useMode(); // access context
+  const allVideos = filteredVideos.all; // always use the full list
 
   const handleRandomVideo = () => {
-    const randomIndex = Math.floor(Math.random() * videos.length);
-    router.push(`/v/${randomIndex + 1}`); // +1 because /v/[number] starts at 1
+    if (allVideos.length === 0) return;
+
+    // Force mode to "all" before navigating
+    setMode("all");
+
+    const randomIndex = Math.floor(Math.random() * allVideos.length);
+    router.push(`/v/${allVideos[randomIndex].index + 1}`); // +1 because /v/[number] is 1-based
   };
 
   return (
@@ -16,7 +22,12 @@ const HomePage: React.FC = () => {
       <h1>Welcome to Video Roulette</h1>
       <button
         onClick={handleRandomVideo}
-        style={{ padding: "10px 20px", fontSize: "18px", marginTop: "20px", cursor: "pointer" }}
+        style={{
+          padding: "10px 20px",
+          fontSize: "18px",
+          marginTop: "20px",
+          cursor: "pointer",
+        }}
       >
         Watch Random Video
       </button>
