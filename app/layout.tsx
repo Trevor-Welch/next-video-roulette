@@ -1,8 +1,4 @@
-export const metadata = {
-  title: "Video Roulette",
-  description: "Random YouTube videos curated over the years.",
-};
-
+// pages/layout.tsx
 export default function RootLayout({
   children,
 }: {
