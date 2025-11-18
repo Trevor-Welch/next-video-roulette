@@ -1,3 +1,4 @@
+// components/YouTubePlayer/YouTubePlayer.tsx
 import { useEffect, useRef, useState } from "react";
 import styles from "./YouTubePlayer.module.css";
 
@@ -5,47 +6,61 @@ interface YouTubePlayerProps {
   videoId: string;
   onEnd?: () => void;
   autoplayNextRef?: React.MutableRefObject<boolean>;
+  userInteracted: boolean;
 }
 
-const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ videoId, onEnd, autoplayNextRef }) => {
+const YouTubePlayer: React.FC<YouTubePlayerProps> = ({
+  videoId,
+  onEnd,
+  autoplayNextRef,
+  userInteracted,
+}) => {
   const playerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentVideoId, setCurrentVideoId] = useState(videoId);
 
-  // Load YouTube API script once
   useEffect(() => {
     if (!window.YT) {
-      console.log("Adding YouTube iframe API script...");
       const tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
       document.body.appendChild(tag);
+      (window as any).onYouTubeIframeAPIReady = () => createPlayer();
+    } else if (window.YT.Player) {
+      createPlayer();
     } else {
-      console.log("YouTube API already loaded");
+      (window as any).onYouTubeIframeAPIReady = () => createPlayer();
     }
-  }, []);
 
-  // Create player
-  useEffect(() => {
-    const createPlayer = () => {
-      if (!containerRef.current || playerRef.current) return;
+    function createPlayer() {
+      if (!containerRef.current) return;
 
-      console.log("Creating YouTube player for videoId:", videoId);
+      playerRef.current?.destroy();
 
       playerRef.current = new window.YT.Player(containerRef.current, {
         videoId,
         events: {
-          onReady: () => console.log("Player ready for videoId:", videoId),
+          onReady: (event: any) => {
+            const player = event.target;
+
+            // Always start muted
+            player.mute();
+            player.playVideo();
+            console.log("Attempted muted autoplay for videoId:", videoId);
+
+            // Only unmute if user has already interacted
+            if (userInteracted) {
+              player.unMute();
+              console.log("User had interacted → unmuted");
+            }
+          },
           onStateChange: (event: any) => {
             const loadedVideoId = playerRef.current?.getVideoData().video_id;
-            console.log("Player state changed:", event.data, "video:", loadedVideoId);
-
             if (
               event.data === window.YT.PlayerState.ENDED &&
               autoplayNextRef?.current &&
               onEnd &&
               loadedVideoId === currentVideoId
             ) {
-              console.log("Autoplay is ON, triggering onEnd for videoId:", loadedVideoId);
               onEnd();
             }
           },
@@ -57,42 +72,40 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ videoId, onEnd, autoplayN
           controls: 1,
         },
       });
-    };
 
-    if (window.YT && window.YT.Player) {
-      createPlayer();
-    } else {
-      window.onYouTubeIframeAPIReady = createPlayer;
+      setCurrentVideoId(videoId);
     }
 
     return () => {
-      console.log("Destroying player for videoId:", currentVideoId);
       playerRef.current?.destroy();
       playerRef.current = null;
     };
-  }, [videoId]); // recreate player each time videoId changes
+  }, [videoId, userInteracted]);
 
-  // Load and play video
-  useEffect(() => {
-    if (!playerRef.current || !playerRef.current.loadVideoById) return;
+  const handleUserGesture = () => {
+    if (playerRef.current) {
+      playerRef.current.unMute();
+      playerRef.current.playVideo();
+      console.log("User interaction: unmuted and playing video");
+    }
+  };
 
-    console.log("Loading new video:", videoId);
-    setCurrentVideoId(videoId);
-    playerRef.current.loadVideoById(videoId);
-
-    const timeout = setTimeout(() => {
-      if (playerRef.current?.playVideo) {
-        console.log("Calling playVideo() for videoId:", videoId);
-        playerRef.current.playVideo();
-      }
-    }, 50);
-
-    return () => clearTimeout(timeout);
-  }, [videoId]);
-
+  // Only show overlay if user has not yet interacted
   return (
     <div className={styles.playerWrapper}>
       <div ref={containerRef} className={styles.playerIframe} />
+      {!userInteracted && (
+        <div
+          className={styles.interactionOverlay}
+          onClick={handleUserGesture}
+          onKeyDown={handleUserGesture}
+          onTouchStart={handleUserGesture}
+          onScroll={handleUserGesture}
+          tabIndex={0}
+        >
+          <p>Tap or click anywhere to start playing videos</p>
+        </div>
+      )}
     </div>
   );
 };

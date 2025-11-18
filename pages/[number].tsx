@@ -6,7 +6,7 @@ import { useMode } from "../context/ModeContext";
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/VideoPage.module.css";
 
-const VideoPage: React.FC = () => {
+const VideoPage: React.FC<{ userInteracted: boolean }> = ({ userInteracted }) => {
   const router = useRouter();
   const { number } = router.query;
   const { filteredVideos, autoplayNext, mode } = useMode();
@@ -67,6 +67,7 @@ const VideoPage: React.FC = () => {
         videoId={video.videoId}
         onEnd={handleNext}
         autoplayNextRef={autoplayNextRef}
+        userInteracted={userInteracted}
       />
 
       <VideoPagination

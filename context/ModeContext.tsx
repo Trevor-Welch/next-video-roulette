@@ -21,7 +21,7 @@ const ModeContext = createContext<ModeContextType | undefined>(undefined);
 
 export const ModeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [mode, setMode] = useState<ModeKey>("all");
-  const [autoplayNext, setAutoplayNext] = useState(false);
+  const [autoplayNext, setAutoplayNext] = useState(true);
 
   // Precompute filtered arrays once, attaching index
   const filteredVideos = useMemo(() => {

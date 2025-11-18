@@ -42,3 +42,26 @@
     height: 45vh;
   }
 }
+
+
+.interactionOverlay {
+  position: fixed; /* <-- covers entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.822);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 9999; /* on top of everything */
+}
+
+.interactionOverlay p {
+  color: #fff;
+  max-width: 80%;
+  margin: 0 auto;
+}
