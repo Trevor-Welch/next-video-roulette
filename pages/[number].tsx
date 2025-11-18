@@ -9,62 +9,50 @@ import styles from "../styles/VideoPage.module.css";
 const VideoPage: React.FC<{ userInteracted: boolean }> = ({ userInteracted }) => {
   const router = useRouter();
   const { number } = router.query;
-  const { filteredVideos, autoplayNext, mode } = useMode();
+  const { filteredVideos, mode, autoplayNext } = useMode();
 
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const autoplayNextRef = useRef(autoplayNext);
-
-  useEffect(() => {
-    autoplayNextRef.current = autoplayNext;
-    console.log("AutoplayNext updated:", autoplayNext);
-  }, [autoplayNext]);
+  useEffect(() => { autoplayNextRef.current = autoplayNext; }, [autoplayNext]);
 
   // Initialize currentIndex from URL
   useEffect(() => {
     if (!number) return;
-    const idx = Array.isArray(number)
-      ? parseInt(number[0], 10) - 1
-      : parseInt(number, 10) - 1;
-    setCurrentIndex(idx);
+    const idx = Array.isArray(number) ? parseInt(number[0], 10) - 1 : parseInt(number, 10) - 1;
     console.log("Initialized currentIndex from URL:", idx);
+    setCurrentIndex(idx);
   }, [number]);
 
   if (currentIndex === null) return <p>Loading...</p>;
 
-  const pool = filteredVideos[mode] || [];
-  if (pool.length === 0) return <p>No videos found for this mode.</p>;
-
-  const video = pool.find(v => v.index === currentIndex) || pool[0];
-  console.log("Currently playing video:", video.videoId, "at index:", currentIndex);
+  // Find the current video from ALL videos, don't filter yet
+  const allVideos = filteredVideos["all"];
+  const currentVideo = allVideos.find(v => v.index === currentIndex) || allVideos[0];
 
   const handleNext = () => {
-    if (!autoplayNextRef.current) return;
-
-    if (pool.length === 1) {
-      console.log("Only one video, replaying:", pool[0].videoId);
-      router.push(`/${pool[0].index + 1}`);
-      setCurrentIndex(pool[0].index);
-      return;
-    }
+    const pool = filteredVideos[mode] || [];
+    if (pool.length === 0) return;
 
     let nextIndex: number;
-    do {
-      const randomPick = Math.floor(Math.random() * pool.length);
-      nextIndex = pool[randomPick].index;
-    } while (nextIndex === currentIndex);
+    if (pool.length === 1) {
+      nextIndex = pool[0].index;
+    } else {
+      do {
+        const randomPick = Math.floor(Math.random() * pool.length);
+        nextIndex = pool[randomPick].index;
+      } while (nextIndex === currentIndex); // avoid picking same video twice
+    }
 
-    console.log("Autoplay picking next random video:", pool[nextIndex].videoId, "at index:", nextIndex);
+    console.log("Autoplay picking next random video:", allVideos[nextIndex]?.videoId, "at index:", nextIndex);
 
     setCurrentIndex(nextIndex);
-    router.push(`/${nextIndex + 1}`);
+    router.push(`/${nextIndex + 1}`, undefined, { shallow: true });
   };
 
   return (
     <div className={styles.pageContainer}>
-      {/* Pass videoId to YouTubePlayer; recreating player each time is fine */}
       <YouTubePlayer
-        key={video.videoId} // forces full re-mount each time
-        videoId={video.videoId}
+        videoId={currentVideo.videoId}
         onEnd={handleNext}
         autoplayNextRef={autoplayNextRef}
         userInteracted={userInteracted}
@@ -74,11 +62,11 @@ const VideoPage: React.FC<{ userInteracted: boolean }> = ({ userInteracted }) =>
         currentIndex={currentIndex}
         onNavigate={(newIndex) => {
           setCurrentIndex(newIndex);
-          router.push(`/${newIndex + 1}`);
+          router.push(`/${newIndex + 1}`, undefined, { shallow: true });
         }}
       />
 
-      <Footer />
+      <Footer videoCount={filteredVideos["all"].length} />
     </div>
   );
 };

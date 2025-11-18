@@ -1,0 +1,19 @@
+.statsContainer {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+
+.statsContainer h3 {
+  margin-bottom: 32px;
+}
+
+.statsContainer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.statsContainer li {
+  margin-bottom: 0.25rem;
+}
