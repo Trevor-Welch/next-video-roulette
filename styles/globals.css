@@ -64,6 +64,8 @@ button {
   background: #ffffff0e;
   color: white;
 
+  letter-spacing: 1px;
+
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s;
 }
@@ -177,3 +179,4 @@ button:disabled {
 /* ------------------------------
    ACTUAL CSS
 --------------------------------*/
+

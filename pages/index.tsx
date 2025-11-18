@@ -1,23 +1,23 @@
-// pages/v/index.tsx
+// pages/index.tsx
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { useMode } from "../context/ModeContext";
+import videosData from "../data/videos.json";
 
-const RandomVideoRedirect: React.FC = () => {
+const HomePage: React.FC = () => {
   const router = useRouter();
-  const { mode, filteredVideos } = useMode();
 
   useEffect(() => {
-    const pool = filteredVideos[mode] || [];
-    if (pool.length === 0) return;
+    if (videosData.length === 0) return;
 
-    const randomIndex = Math.floor(Math.random() * pool.length);
-    const videoIndex = pool[randomIndex].index;
+    // Pick a random video
+    const randomIndex = Math.floor(Math.random() * videosData.length);
+    const video = videosData[randomIndex];
 
-    router.replace(`/${videoIndex + 1}`);
-  }, [mode, router, filteredVideos]);
+    // Redirect to the video's page (using array index)
+    router.replace(`/${randomIndex + 1}`);
+  }, [router]);
 
   return <p>Redirecting to a random video...</p>;
 };
 
-export default RandomVideoRedirect;
+export default HomePage;

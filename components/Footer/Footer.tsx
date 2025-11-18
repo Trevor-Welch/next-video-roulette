@@ -10,7 +10,7 @@ const Footer: React.FC<FooterProps> = ({ videoCount }) => {
   return (
     <footer className={styles.footer}>
       <p className={styles.aboutText}>
-        This app is a personal collection of my favorite YouTube videos and music over the years.
+        This app is a personal collection of my favorite YouTube videos and music over the years. Hopefully many of them are new to you - or bring back some good memories.
         <br /><br />
         Built with Next.js.
       </p>
@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({ videoCount }) => {
       <p className={styles.credit}>
         By{" "}
         <a
-          href="https://trevor.example.com"
+          href="https://trevorjwelch.com"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.feedbackLink}

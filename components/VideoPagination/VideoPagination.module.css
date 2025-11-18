@@ -24,3 +24,8 @@
 .toggleButton:hover {
     color: #888888;
 }
+
+.randomButton {
+  font-size: 1.25rem;
+  font-weight: bold;
+}

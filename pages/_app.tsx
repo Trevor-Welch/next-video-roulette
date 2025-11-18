@@ -2,6 +2,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ModeProvider } from "../context/ModeContext";
+import { PlayedVideosProvider } from "../context/PlayedVideosContext";
 import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -32,7 +33,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ModeProvider>
-      <Component {...pageProps} userInteracted={userInteracted} />
+      <PlayedVideosProvider>
+        <Component {...pageProps} userInteracted={userInteracted} />
+      </PlayedVideosProvider>
     </ModeProvider>
   );
 }

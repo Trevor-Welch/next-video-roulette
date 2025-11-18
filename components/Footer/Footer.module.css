@@ -2,7 +2,7 @@
 .footer {
   margin-top: 128px;
   width: 90%;
-  max-width: 700px;
+  max-width: 600px;
   text-align: center;
   padding-bottom: 64px;
   margin-left: auto;
@@ -10,10 +10,10 @@
 }
 
 .aboutText {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.11);
   margin-bottom: 64px;
-  line-height: 1.4;
+  line-height: 1.8;
 }
 
 .feedbackLink {
