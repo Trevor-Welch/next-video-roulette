@@ -33,6 +33,16 @@
   }
 }
 
+@media (max-width: 660px) {
+  .pageContainer {
+    padding: 0px;
+  }
+
+  .playerWrapper {
+    border-radius: 0px;
+  }
+}
+
 @media (max-width: 480px) {
   .playerWrapper {
     height: 40vh;

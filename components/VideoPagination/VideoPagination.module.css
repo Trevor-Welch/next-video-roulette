@@ -7,6 +7,7 @@
 .buttonRow {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 16px;
   flex-wrap: wrap;
   padding: 16px 0px;
@@ -28,4 +29,24 @@
 .randomButton {
   font-size: 1.25rem;
   font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  /* Allow wrapping on mobile */
+  .paginationContainer .buttonRow:first-of-type {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 320px;
+  }
+
+  /* Make Random come first + take full row but keep natural width */
+  .randomButton {
+    order: -1;                /* puts Random at the top */
+    display: block;           /* makes it occupy its own line */
+    width: 200px;
+    max-width: 100%;              /* natural width */
+    margin-left: auto;
+    margin-right: auto;       /* centers the button */
+  }
 }

@@ -44,6 +44,7 @@ const VideoPage: React.FC<{ userInteracted: boolean }> = ({ userInteracted }) =>
 
   return (
     <div className={styles.pageContainer}>
+      <div className={styles.minHeightContainer}>
       <YouTubePlayer
         videoId={currentVideo.videoId}
         onEnd={handleNext}
@@ -58,6 +59,8 @@ const VideoPage: React.FC<{ userInteracted: boolean }> = ({ userInteracted }) =>
           router.push(`/${newIndex + 1}`, undefined, { shallow: true });
         }}
       />
+
+      </div>
 
       <Footer videoCount={allVideos.length} />
     </div>
