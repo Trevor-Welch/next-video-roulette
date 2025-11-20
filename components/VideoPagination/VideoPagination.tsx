@@ -1,3 +1,4 @@
+// components/VideoPagination/VideoPagination.tsx
 import { forwardRef, useImperativeHandle } from "react";
 import { useMode } from "../../context/ModeContext";
 import { usePlayedVideos } from "../../context/PlayedVideosContext";
